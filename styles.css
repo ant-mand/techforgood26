@@ -12,25 +12,27 @@ html, body {
 
 body {
   background-color: #ffffff;
-  color: #800000;
+  color: #333333;
 }
 
 .body-section {
   margin-bottom: 50px;
+  margin-top: 0;
 }
 
 nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #1959A3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  margin-bottom: 0;
 }
 
 .nav-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 10px 24px;
+  padding: 6px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,8 +41,14 @@ nav {
 .nav-brand {
   font-weight: 700;
   font-size: 1.1rem;
-  color: #800000;
+  color: #ffffff;
   text-decoration: none;
+}
+
+.nav-brand img {
+  height: 40px;        
+  width: auto;
+  display: block;
 }
 
 #nav-bar {
@@ -54,7 +62,7 @@ nav {
 #nav-bar li a {
   display: block;
   padding: 8px 12px;
-  color: #800000;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -63,29 +71,118 @@ nav {
 #nav-bar li a:hover,
 #nav-bar li a:focus,
 #nav-bar li a.active {
-  background-color: #800000;
-  color:#ffffff;
+  background-color: #ffffff;
+  color:#1959A3;
 }
 
 #header {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 4 / 1;
+  width: 100%;
+  height: auto;
+  margin-top: 0;
+  padding-top: 0;
+  display: block;
+  background-image: url('tgc_conference.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-color: #1959A3;
+}
+
+#hero-content {
   text-align: center;
-  padding: 80px 20px 70px 20px;
-  background-color: #800000;
+  padding: 30px 20px;
+  background-color: #1959A3;
+  color: #ffffff;
+  max-width: 100%;
+  margin: 0;
+}
+
+#hero-text h2 {
+  font-size: 1.9rem;
+  margin-bottom: 10px;
   color: #ffffff;
 }
 
-#header h1 {
+#hero-text h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Registration button styled like h2 */
+#hero-text .btn-primary {
+  margin-top: 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  padding: 8px 24px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#hero-text .btn-primary:hover,
+#hero-text .btn-primary:focus {
+  background-color: #ffffff;
+  color: #1959A3;
+  border-color: #ffffff;
+}
+
+#hero-content .btn-primary:hover,
+#hero-content .btn-primary:focus {
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #1959A3;
+  border-color: rgba(255, 255, 255, 0.92);
+}
+
+/* #hero-content {
+  text-align: center;
+  padding: 0 20px 70px 20px;
+  background-color: #ffffff;
+  color: #1959A3;
+} */
+/* 
+#hero-text h1 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+} */
+/* 
+#hero-text h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+} */
+
+/* #hero-text a {
+  text-decoration: none;
+  color: #1959A3;
+} */
+
+#header-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffffff;
+}
+
+#header-content h1 {
   font-size: 2.4rem;
   margin-bottom: 20px;
 }
 
-#header h2 {
+#header-content h2 {
   font-size: 1.3rem;
   font-weight: 500;
   margin-bottom: 14px;
 }
 
-#header a {
+#header-content a {
   text-decoration: none;
 }
 
@@ -94,21 +191,21 @@ nav {
   padding: 12px 28px;
   margin-top: 12px;
   border-radius: 999px;
-  background-color: #800000;   
-  color: #ffffff;            
+  background-color: #ffffff;   
+  color: #1959A3;            
   font-weight: 700;
   text-decoration: none;
   letter-spacing: 0.03em;
-  border: 2px solid #ffffff;  
+  border: 2px solid #1959A3;  
   transition: background-color 0.2s ease, color 0.2s ease,
               box-shadow 0.2s ease, transform 0.1s ease;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #ffffff;   
-  color: #800000;            
-  border-color: #800000;      
+  background-color: #1959A3;   
+  color: #ffffff;            
+  border-color: #ffffff;      
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   transform: translateY(-1px);
 }
@@ -122,7 +219,10 @@ section {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 24px;
-  line-height: 1.6;
+  line-height: 1.7;
+  background-color: #ffffff;
+  color: #333333;
+  scroll-margin-top: 78px; /* offset for sticky navbar when jumping to anchors */
 }
 
 section:nth-of-type(odd) {
@@ -130,21 +230,27 @@ section:nth-of-type(odd) {
 }
 
 section:nth-of-type(even) {
-  background-color: #f6f1f1;
+  background-color: #ffffff;
 }
 
 section h2 {
   font-size: 1.8rem;
   margin-bottom: 16px;
+  color: #1959A3;
+  font-weight: 700;
 }
 
 section h3 {
   font-size: 1.2rem;
   margin: 24px 0 10px 0;
+  color: #1959A3;
+  font-weight: 600;
 }
 
 section p {
   margin-bottom: 16px;
+  color: #333333;
+  font-size: 1rem;
 }
 
 #about-list,
@@ -152,20 +258,24 @@ section p {
 section ul {
   margin-left: 20px;
   margin-bottom: 16px;
+  color: #333333;
 }
 
 section li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  color: #333333;
 }
 
 section a {
-  color: #800000;
+  color: #1959A3;
   font-weight: 600;
   text-decoration: underline;
+  transition: color 0.2s ease;
 }
 
 section a:hover,
 section a:focus {
+  color: #144080;
   text-decoration-thickness: 2px;
 }
 
