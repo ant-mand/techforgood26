@@ -1822,3 +1822,364 @@ button:focus-visible {
     scroll-behavior: auto;
   }
 }
+
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:16px; scroll-behavior:smooth; }
+body { font-family:var(--font); background:var(--white); color:var(--gray-600); line-height:1.7; }
+a { text-decoration:none; color:inherit; }
+img { max-width:100%; height:auto; display:block; }
+.container { max-width:1200px; margin:0 auto; padding:0 32px; }
+section { padding:80px 0; }
+
+/* Section Header */
+.section-header { text-align:center; margin-bottom:48px; }
+.section-header h2 { font-size:2.4rem; font-weight:700; color:var(--blue); margin-bottom:14px; }
+.section-line { width:64px; height:3px; background:linear-gradient(90deg, var(--blue), var(--blue-light)); margin:0 auto; border-radius:2px; }
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+#about { background:var(--white); }
+
+.about-intro {
+  max-width:760px;
+  margin:0 auto 36px;
+  text-align:center;
+}
+.about-intro p {
+  font-size:1.08rem;
+  color:var(--gray-600);
+  line-height:1.8;
+  margin-bottom:12px;
+}
+.about-intro p:last-child { margin-bottom:0; }
+.about-intro strong { color:var(--gray-800); }
+
+/* Detail chips */
+.about-chips {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:48px;
+}
+.about-chip {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 18px;
+  background:var(--off-white);
+  border:1px solid var(--gray-200);
+  border-radius:8px;
+  font-size:0.88rem;
+  font-weight:600;
+  color:var(--gray-800);
+}
+.about-chip svg { color:var(--blue); flex-shrink:0; width:18px; height:18px; }
+.about-chip-accent {
+  background:linear-gradient(135deg, #eef4fb, #e4eef8);
+  border-color:rgba(25,89,163,0.12);
+  color:var(--blue-dark);
+}
+
+/* ============================================
+   VENUE BLOCK
+   ============================================ */
+.venue-block {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.venue-day {
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--gray-200);
+  background:var(--white);
+}
+
+.venue-day-bar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 24px;
+  background:var(--navy);
+}
+.venue-day-bar h3 {
+  font-size:1rem;
+  font-weight:700;
+  color:var(--white);
+  letter-spacing:-0.01em;
+}
+.venue-day-bar .tag {
+  font-size:0.68rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.07em;
+  padding:4px 12px;
+  border-radius:6px;
+  background:rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.85);
+}
+.venue-day-bar .tag-green {
+  background:rgba(52, 89, 211, 0.18);
+  color:#6ecde7;
+}
+
+.venue-row {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.venue-row > .venue-cell:first-child {
+  border-right:1px solid var(--gray-100);
+}
+
+.venue-cell {
+  display:grid;
+  grid-template-columns:200px 1fr;
+  min-height:200px;
+}
+
+.venue-map {
+  background:var(--gray-100);
+  position:relative;
+}
+.venue-map iframe {
+  position:absolute; inset:0; width:100%; height:100%; border:0;
+}
+
+.venue-info {
+  padding:20px 24px;
+  display:flex;
+  flex-direction:column;
+}
+.venue-info .time-pill {
+  display:inline-block;
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--blue);
+  background:#eef4fb;
+  padding:3px 10px;
+  border-radius:5px;
+  margin-bottom:8px;
+  width:fit-content;
+}
+.venue-info h4 {
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--gray-800);
+  margin-bottom:4px;
+}
+.venue-info .desc {
+  font-size:0.88rem;
+  color:var(--gray-600);
+  margin-bottom:2px;
+}
+.venue-info .addr {
+  font-size:0.84rem;
+  color:var(--gray-400);
+}
+.venue-info .wayfinding {
+  font-size:0.8rem;
+  color:var(--gray-600);
+  background:var(--off-white);
+  padding:7px 10px;
+  border-radius:6px;
+  margin-top:8px;
+  line-height:1.45;
+  display:flex;
+  gap:6px;
+  align-items:flex-start;
+}
+.venue-info .wayfinding svg { flex-shrink:0; color:var(--blue-light); margin-top:1px; }
+.venue-info .dir-link {
+  font-size:0.84rem;
+  font-weight:600;
+  color:var(--blue);
+  margin-top:auto;
+  padding-top:10px;
+}
+.venue-info .dir-link:hover { color:var(--blue-dark); }
+
+/* Saturday virtual row */
+.venue-virtual-row {
+  padding:28px 24px;
+  text-align:center;
+}
+.venue-virtual-row h4 {
+  font-size:1.08rem;
+  font-weight:700;
+  color:var(--gray-800);
+  margin-bottom:6px;
+}
+.venue-virtual-row p {
+  font-size:0.9rem;
+  color:var(--gray-600);
+  margin-bottom:18px;
+}
+.zoom-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 24px;
+  background:linear-gradient(135deg, #054996, #3491d3);
+  color:var(--white);
+  font-size:0.9rem;
+  font-weight:700;
+  border-radius:8px;
+  transition:all 0.25s var(--ease);
+  box-shadow:0 3px 12px rgba(5, 77, 150, 0.18);
+}
+.zoom-btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(5, 90, 150, 0.25);
+  color:var(--white);
+}
+
+.venue-day-virtual .venue-day-bar {
+  background:linear-gradient(135deg, #06384e, #054b96);
+}
+
+/* ============================================
+   LIGHTNING TALKS
+   ============================================ */
+.lt-container {
+  margin-top:20px;
+}
+.lt-track {
+  border:1px solid var(--gray-200);
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:14px;
+  background:var(--white);
+}
+.lt-track:last-child { margin-bottom:0; }
+
+.lt-head {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 22px;
+  border-bottom:1px solid var(--gray-100);
+  background:var(--off-white);
+}
+.lt-num {
+  width:32px; height:32px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:0.82rem;
+  font-weight:800;
+  color:var(--white);
+  flex-shrink:0;
+}
+.lt-track-1 .lt-num { background:var(--navy); }
+.lt-track-2 .lt-num { background:var(--blue); }
+.lt-track-3 .lt-num { background:var(--blue-light); }
+
+.lt-meta { flex:1; min-width:0; }
+.lt-meta-label {
+  font-size:0.68rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.07em;
+  color:var(--gray-400);
+  line-height:1;
+}
+.lt-meta-name {
+  font-size:0.95rem;
+  font-weight:700;
+  color:var(--gray-800);
+}
+.lt-count {
+  font-size:0.74rem;
+  font-weight:600;
+  color:var(--blue);
+  background:#eef4fb;
+  padding:3px 10px;
+  border-radius:5px;
+  white-space:nowrap;
+}
+
+.lt-items {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  counter-reset:item;
+}
+.lt-items li {
+  counter-increment:item;
+  padding:10px 22px;
+  font-size:0.88rem;
+  color:var(--gray-600);
+  line-height:1.5;
+  border-bottom:1px solid var(--gray-100);
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+}
+.lt-items li:nth-last-child(-n+2) { border-bottom:none; }
+.lt-items li::before {
+  content:counter(item) ".";
+  font-size:0.76rem;
+  font-weight:700;
+  color:var(--gray-400);
+  min-width:22px;
+  flex-shrink:0;
+}
+.lt-items li:hover { background:var(--off-white); }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width:1100px) {
+  .venue-row { grid-template-columns:1fr; }
+  .venue-row > .venue-cell:first-child { border-right:none; border-bottom:1px solid var(--gray-100); }
+}
+@media (max-width:900px) {
+  .venue-cell { grid-template-columns:1fr; }
+  .venue-map { height:180px; }
+  .lt-items { grid-template-columns:1fr; }
+  .lt-items li:last-child { border-bottom:none; }
+}
+@media (max-width:700px) {
+  .container { padding:0 20px; }
+  section { padding:60px 0; }
+  .section-header h2 { font-size:1.8rem; }
+  .about-intro p { font-size:1rem; }
+  .about-chips { gap:8px; }
+  .about-chip { font-size:0.82rem; padding:7px 14px; }
+  .venue-info { padding:16px 18px; }
+  .venue-map { height:150px; }
+  .lt-head { padding:12px 16px; gap:10px; }
+  .lt-items li { padding:9px 16px; font-size:0.84rem; }
+}
+
+/* ===== Saieh Hall Directions Video ===== */
+.venue-video {
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+}
+
+.venue-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.venue-video-caption {
+  font-size: 0.78rem;
+  color: var(--gray-400);
+  padding: 8px 10px;
+  background: var(--off-white);
+  border-top: 1px solid var(--gray-100);
+}
